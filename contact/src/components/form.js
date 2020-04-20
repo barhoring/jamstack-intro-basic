@@ -31,6 +31,7 @@ const Form = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(state);
   };
 
   return (
@@ -47,15 +48,32 @@ const Form = () => {
       </label>
       <label className={styles.label}>
         Email
-        <input className={styles.input} type="email" name="email" />
+        <input
+          className={styles.input}
+          type="email"
+          name="email"
+          value={state.email}
+          onChange={updateFieldValue("email")}
+        />
       </label>
       <label className={styles.label}>
         Subject
-        <input className={styles.input} type="text" name="subject" />
+        <input
+          className={styles.input}
+          type="text"
+          name="subject"
+          value={state.subject}
+          onChange={updateFieldValue("subject")}
+        />
       </label>
       <label className={styles.label}>
         Body
-        <textarea className={styles.input} name="body" />
+        <textarea
+          className={styles.input}
+          name="body"
+          value={state.body}
+          onChange={updateFieldValue("body")}
+        />
       </label>
       <button className={styles.button}>Send</button>
     </form>
