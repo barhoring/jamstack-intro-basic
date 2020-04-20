@@ -6,7 +6,7 @@ const Form = () => {
     event.preventDefault();
   };
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <label className={styles.label}>
         Name
         <input className={styles.input} type="text" name="name" />
@@ -23,9 +23,7 @@ const Form = () => {
         Body
         <textarea className={styles.input} name="body" />
       </label>
-      <button className={styles.button} onClick={handleSubmit}>
-        Send
-      </button>
+      <button className={styles.button}>Send</button>
     </form>
   );
 };
